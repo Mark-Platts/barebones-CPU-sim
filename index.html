@@ -39,17 +39,22 @@
                         <td> <div id="overflowFlag" class="backing">0</div> </td>
                     </tr>
                     <tr>
-                        <td> Instruction<br>Address<br>Register:</td>
-                        <td> <div id="InstAddReg" class="backing">0110</div> </td>
+                        <td> Counter:</td>
+                        <td> <div id="InstAddReg" class="backing">0010</div> </td>
+                    </tr>
+                    <tr>
+                        <td> Cycle:</td>
+                        <td> <div id="cyclePart" class="backing">S</div> </td>
                     </tr>
                 </table>
 
                 <div id="controls">
                     <div id="radioHolder">
+                        <p>Clock Speed:</p>
                         <input type="radio" id="1hz" name="speed" value=1>
-                        <label for="1hz">1 Hz</label>
+                        <label for="1hz">1 Hz</label><br>
                         <input type="radio" id="10hz" name="speed" value=10>
-                        <label for="10hz">10 Hz</label>
+                        <label for="10hz">10 Hz</label><br>
                         <input type="radio" id="100hz" name="speed" value=100>
                         <label for="100hz">100 Hz</label>
                     </div>
@@ -70,87 +75,87 @@
                     </tr>
                     <tr>
                         <td> Address </td>
-                        <td> Data </td>
+                        <td> Instruction </td>
                         <td> Translated </td>
                     </tr>
-                    <tr>
+                    <tr id="row0">
                         <td> 0000 </td>
-                        <td> <input type="text" id="data0" class="backing"></td>
+                        <td> <input type="text" id="data0" class="backing" value="00000000"></td>
                         <td id="dec0"></td>
                     </tr>
-                    <tr>
+                    <tr id="row1">
                         <td> 0001 </td>
-                        <td> <input type="text" id="data1" class="backing"></td>
+                        <td> <input type="text" id="data1" class="backing" value="00000000"></td>
                         <td id="dec1"></td>
                     </tr>
-                    <tr>
+                    <tr id="row2">
                         <td> 0010 </td>
-                        <td> <input type="text" id="data2" class="backing"></td>
+                        <td> <input type="text" id="data2" class="backing" value="00000000"></td>
                         <td id="dec2"></td>
                     </tr>
-                    <tr>
+                    <tr id="row3">
                         <td> 0011 </td>
-                        <td> <input type="text" id="data3" class="backing"></td>
+                        <td> <input type="text" id="data3" class="backing" value="00000000"></td>
                         <td id="dec3"></td>
                     </tr>
-                    <tr>
+                    <tr id="row4">
                         <td> 0100 </td>
-                        <td> <input type="text" id="data4" class="backing"></td>
+                        <td> <input type="text" id="data4" class="backing" value="00000000"></td>
                         <td id="dec4"></td>
                     </tr>
-                    <tr>
+                    <tr id="row5">
                         <td> 0101 </td>
-                        <td> <input type="text" id="data5" class="backing"></td>
+                        <td> <input type="text" id="data5" class="backing" value="00000000"></td>
                         <td id="dec5"></td>
                     </tr>
-                    <tr>
+                    <tr id="row6">
                         <td> 0110 </td>
-                        <td> <input type="text" id="data6" class="backing"></td>
+                        <td> <input type="text" id="data6" class="backing" value="00000000"></td>
                         <td id="dec6"></td>
                     </tr>
-                    <tr>
+                    <tr id="row7">
                         <td> 0111 </td>
-                        <td> <input type="text" id="data7" class="backing"></td>
+                        <td> <input type="text" id="data7" class="backing" value="00000000"></td>
                         <td id="dec7"></td>
                     </tr>
-                    <tr>
+                    <tr id="row8">
                         <td> 1000 </td>
-                        <td> <input type="text" id="data8" class="backing"></td>
+                        <td> <input type="text" id="data8" class="backing" value="00000000"></td>
                         <td id="dec8"></td>
                     </tr>
-                    <tr>
+                    <tr id="row9">
                         <td> 1001 </td>
-                        <td> <input type="text" id="data9" class="backing"></td>
+                        <td> <input type="text" id="data9" class="backing" value="00000000"></td>
                         <td id="dec9"></td>
                     </tr>
-                    <tr>
+                    <tr id="row10">
                         <td> 1010 </td>
-                        <td> <input type="text" id="data10" class="backing"></td>
+                        <td> <input type="text" id="data10" class="backing" value="00000000"></td>
                         <td id="dec10"></td>
                     </tr>
-                    <tr>
+                    <tr id="row11">
                         <td> 1011 </td>
-                        <td> <input type="text" id="data11" class="backing"></td>
+                        <td> <input type="text" id="data11" class="backing" value="00000000"></td>
                         <td id="dec11"></td>
                     </tr>
-                    <tr>
+                    <tr id="row12">
                         <td> 1100 </td>
-                        <td> <input type="text" id="data12" class="backing"></td>
+                        <td> <input type="text" id="data12" class="backing" value="00000000"></td>
                         <td id="dec12"></td>
                     </tr>
-                    <tr>
+                    <tr id="row13">
                         <td> 1101 </td>
-                        <td> <input type="text" id="data13" class="backing"></td>
+                        <td> <input type="text" id="data13" class="backing" value="00000000"></td>
                         <td id="dec13"></td>
                     </tr>
-                    <tr>
+                    <tr id="row14">
                         <td> 1110 </td>
-                        <td> <input type="text" id="data14" class="backing"></td>
+                        <td> <input type="text" id="data14" class="backing" value="00000000"></td>
                         <td id="dec14"></td>
                     </tr>
-                    <tr>
+                    <tr id="row15">
                         <td> 1111 </td>
-                        <td> <input type="text" id="data15" class="backing"></td>
+                        <td> <input type="text" id="data15" class="backing" value="00000000"></td>
                         <td id="dec15"></td>
                     </tr>  
                 </table>
@@ -162,6 +167,16 @@
         <div id="howTo">
             <h2>Instructions:</h2>
             <p>Test text</p>
+            <table id="manual">
+                <tr>
+                    <th>OpCode:</th>
+                    <th>Description:</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
         </div>
 
         <div id="explanation"></div>

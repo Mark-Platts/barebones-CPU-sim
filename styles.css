@@ -9,9 +9,6 @@ body {
 }
 
 
-input, label {
-    display: inline;
-}
 
 table {
     margin: 10px;
@@ -46,10 +43,32 @@ th, td {
     padding: 2px;
 }
 
+.blinkBacking {
+    background-color: gold;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.counterTurn {
+    background-color: rgb(7, 115, 148);
+    border-radius: 4px;
+    padding: 2px;
+}
+
 button {
     padding: 2px;
 }
 
 #howTo {
     color: lightgrey;
+}
+
+#RAMWrap, #nonRAMWrap {
+    margin: 0 auto;
+}
+
+#howTo table {
+    background-color: #1b1b1b;
+    border: 1px solid white;
+    border-radius: 0;
 }
