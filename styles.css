@@ -1,0 +1,55 @@
+body {
+    font-family: monospace;
+    background-color: #1b1b1b;
+}
+
+#container {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+
+input, label {
+    display: inline;
+}
+
+table {
+    margin: 10px;
+    padding: 10px;
+    background-color: lightblue;
+    border-radius: 5px;
+}
+
+table input {
+    width: 4rem;
+}
+
+#RAMWrap input {
+    border: none;
+}
+
+#controls {
+    padding: 10px;
+    background-color: lightgrey;
+    border-radius: 5px;
+}
+
+th, td {
+    text-align: center;
+    /* border: 1px solid oldlace;
+    border-radius: 2px; */
+}
+
+.backing {
+    background-color: lightcyan;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+button {
+    padding: 2px;
+}
+
+#howTo {
+    color: lightgrey;
+}
