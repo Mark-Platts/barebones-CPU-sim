@@ -55,6 +55,12 @@ th, td {
     padding: 2px;
 }
 
+.errorHighlight {
+    background-color: rgb(153, 33, 33);
+    border-radius: 4px;
+    padding: 2px;
+}
+
 button {
     padding: 2px;
 }
@@ -67,8 +73,22 @@ button {
     margin: 0 auto;
 }
 
-#howTo table {
+/* #howTo table {
     background-color: #1b1b1b;
+    border: 1px solid white;
+    border-radius: 0;
+} */
+
+.manualTable {
+    margin: 0px;
+    padding: 0px;
+    background-color: #1b1b1b;
+    border: 1px solid white;
+    border-radius: 0;
+}
+
+.manualEntry {
+    padding: 4px;
     border: 1px solid white;
     border-radius: 0;
 }

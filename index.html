@@ -14,7 +14,7 @@
                 <table id="accumulatorTable">
                     <tr>
                         <td> Accumulator:</td>
-                        <td> <div id="accumulator" class="backing">0011</div> </td>
+                        <td> <div id="accumulator" class="backing">0000</div> </td>
                     </tr>
                 </table>
 
@@ -43,7 +43,7 @@
                         <td> <div id="InstAddReg" class="backing">0010</div> </td>
                     </tr>
                     <tr>
-                        <td> Cycle:</td>
+                        <td> Phase:</td>
                         <td> <div id="cyclePart" class="backing">S</div> </td>
                     </tr>
                 </table>
@@ -51,17 +51,17 @@
                 <div id="controls">
                     <div id="radioHolder">
                         <p>Clock Speed:</p>
+                        <input type="radio" id="0.25hz" name="speed" value=1 checked>
+                        <label for="1hz">0.25 Hz</label><br>
                         <input type="radio" id="1hz" name="speed" value=1>
-                        <label for="1hz">1 Hz</label><br>
-                        <input type="radio" id="10hz" name="speed" value=10>
-                        <label for="10hz">10 Hz</label><br>
-                        <input type="radio" id="100hz" name="speed" value=100>
-                        <label for="100hz">100 Hz</label>
+                        <label for="10hz">1 Hz</label><br>
+                        <input type="radio" id="10hz" name="speed" value=1>
+                        <label for="100hz">10 Hz</label>
                     </div>
                     <br>
-                    <button id="reset">Reset</button>
-                    <button id="step">Step</button>
-                    <button id="play">Play</button>
+                    <button id="reset" onclick="reset()">Reset</button>
+                    <button id="step" onclick="doStep()">Step</button>
+                    <button id="play" onclick="playPause()">Play/Pause</button>
                     <br>
                     <button id="save">Save State</button>
                     <button id="load">Load State</button>
@@ -80,83 +80,83 @@
                     </tr>
                     <tr id="row0">
                         <td> 0000 </td>
-                        <td> <input type="text" id="data0" class="backing" value="00000000"></td>
-                        <td id="dec0"></td>
+                        <td> <input type="text" id="data0" class="backing" value="00000000" onchange="updateTrans()"></td>
+                        <td id="dec0">NUL 0</td>
                     </tr>
                     <tr id="row1">
                         <td> 0001 </td>
-                        <td> <input type="text" id="data1" class="backing" value="00000000"></td>
-                        <td id="dec1"></td>
+                        <td> <input type="text" id="data1" class="backing" value="00000000" onchange="updateTrans()"></td>
+                        <td id="dec1">NUL 0</td>
                     </tr>
                     <tr id="row2">
                         <td> 0010 </td>
-                        <td> <input type="text" id="data2" class="backing" value="00000000"></td>
-                        <td id="dec2"></td>
+                        <td> <input type="text" id="data2" class="backing" value="00000000" onchange="updateTrans()"></td>
+                        <td id="dec2">NUL 0</td>
                     </tr>
                     <tr id="row3">
                         <td> 0011 </td>
-                        <td> <input type="text" id="data3" class="backing" value="00000000"></td>
-                        <td id="dec3"></td>
+                        <td> <input type="text" id="data3" class="backing" value="00000000" onchange="updateTrans()"></td>
+                        <td id="dec3">NUL 0</td>
                     </tr>
                     <tr id="row4">
                         <td> 0100 </td>
-                        <td> <input type="text" id="data4" class="backing" value="00000000"></td>
-                        <td id="dec4"></td>
+                        <td> <input type="text" id="data4" class="backing" value="00000000" onchange="updateTrans()"></td>
+                        <td id="dec4">NUL 0</td>
                     </tr>
                     <tr id="row5">
                         <td> 0101 </td>
-                        <td> <input type="text" id="data5" class="backing" value="00000000"></td>
-                        <td id="dec5"></td>
+                        <td> <input type="text" id="data5" class="backing" value="00000000" onchange="updateTrans()"></td>
+                        <td id="dec5">NUL 0</td>
                     </tr>
                     <tr id="row6">
                         <td> 0110 </td>
-                        <td> <input type="text" id="data6" class="backing" value="00000000"></td>
-                        <td id="dec6"></td>
+                        <td> <input type="text" id="data6" class="backing" value="00000000" onchange="updateTrans()"></td>
+                        <td id="dec6">NUL 0</td>
                     </tr>
                     <tr id="row7">
                         <td> 0111 </td>
-                        <td> <input type="text" id="data7" class="backing" value="00000000"></td>
-                        <td id="dec7"></td>
+                        <td> <input type="text" id="data7" class="backing" value="00000000" onchange="updateTrans()"></td>
+                        <td id="dec7">NUL 0</td>
                     </tr>
                     <tr id="row8">
                         <td> 1000 </td>
-                        <td> <input type="text" id="data8" class="backing" value="00000000"></td>
-                        <td id="dec8"></td>
+                        <td> <input type="text" id="data8" class="backing" value="00000000" onchange="updateTrans()"></td>
+                        <td id="dec8">NUL 0</td>
                     </tr>
                     <tr id="row9">
                         <td> 1001 </td>
-                        <td> <input type="text" id="data9" class="backing" value="00000000"></td>
-                        <td id="dec9"></td>
+                        <td> <input type="text" id="data9" class="backing" value="00000000" onchange="updateTrans()"></td>
+                        <td id="dec9">NUL 0</td>
                     </tr>
                     <tr id="row10">
                         <td> 1010 </td>
-                        <td> <input type="text" id="data10" class="backing" value="00000000"></td>
-                        <td id="dec10"></td>
+                        <td> <input type="text" id="data10" class="backing" value="00000000" onchange="updateTrans()"></td>
+                        <td id="dec10">NUL 0</td>
                     </tr>
                     <tr id="row11">
                         <td> 1011 </td>
-                        <td> <input type="text" id="data11" class="backing" value="00000000"></td>
-                        <td id="dec11"></td>
+                        <td> <input type="text" id="data11" class="backing" value="00000000" onchange="updateTrans()"></td>
+                        <td id="dec11">NUL 0</td>
                     </tr>
                     <tr id="row12">
                         <td> 1100 </td>
-                        <td> <input type="text" id="data12" class="backing" value="00000000"></td>
-                        <td id="dec12"></td>
+                        <td> <input type="text" id="data12" class="backing" value="00000000" onchange="updateTrans()"></td>
+                        <td id="dec12">NUL 0</td>
                     </tr>
                     <tr id="row13">
                         <td> 1101 </td>
-                        <td> <input type="text" id="data13" class="backing" value="00000000"></td>
-                        <td id="dec13"></td>
+                        <td> <input type="text" id="data13" class="backing" value="00000000" onchange="updateTrans()"></td>
+                        <td id="dec13">NUL 0</td>
                     </tr>
                     <tr id="row14">
                         <td> 1110 </td>
-                        <td> <input type="text" id="data14" class="backing" value="00000000"></td>
-                        <td id="dec14"></td>
+                        <td> <input type="text" id="data14" class="backing" value="00000000" onchange="updateTrans()"></td>
+                        <td id="dec14">NUL 0</td>
                     </tr>
                     <tr id="row15">
                         <td> 1111 </td>
-                        <td> <input type="text" id="data15" class="backing" value="00000000"></td>
-                        <td id="dec15"></td>
+                        <td> <input type="text" id="data15" class="backing" value="00000000" onchange="updateTrans()"></td>
+                        <td id="dec15">NUL 0</td>
                     </tr>  
                 </table>
             </div>
@@ -167,14 +167,71 @@
         <div id="howTo">
             <h2>Instructions:</h2>
             <p>Test text</p>
-            <table id="manual">
+            <table id="manual" class="manualTable">
                 <tr>
-                    <th>OpCode:</th>
-                    <th>Description:</th>
+                    <th class="manualEntry">OpCode:</th>
+                    <th class="manualEntry">Name:</th>
+                    <th class="manualEntry">Description:</th>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td class="manualEntry">0000</td>
+                    <th class="manualEntry">Null (NUL)</th>
+                    <td class="manualEntry">No operation occurs. Use this to store a value in the RAM.</td>
+                </tr>
+                <tr>
+                    <td class="manualEntry">0001</td>
+                    <th class="manualEntry">Clear (CLR)</th>
+                    <td class="manualEntry">Clears the accumulator, reseting it to 0000.</td>
+                </tr>
+                <tr>
+                    <td class="manualEntry">0010</td>
+                    <th class="manualEntry">Halt (HLT)</th>
+                    <td class="manualEntry">Instructs the program to terminate, but final values remain.</td>
+                </tr>
+                <tr>
+                    <td class="manualEntry">0011</td>
+                    <th class="manualEntry">None</th>
+                    <td class="manualEntry">Reserved for future operation.</td>
+                </tr>
+                <tr>
+                    <td class="manualEntry">0100</td>
+                    <th class="manualEntry">Load (LOD)</th>
+                    <td class="manualEntry">Sets accumulator equal to the value stored at the code address.</td>
+                </tr>
+                <tr>
+                    <td class="manualEntry">0101</td>
+                    <th class="manualEntry">Save (SAV)</th>
+                    <td class="manualEntry">Sets the value stored at the code address equal to the accumulator value.</td>
+                </tr>
+                <tr>
+                    <td class="manualEntry">0110</td>
+                    <th class="manualEntry">Add (ADD)</th>
+                    <td class="manualEntry">Adds the value stored at the code address to the accumulator, increasing its current value.</td>
+                </tr>
+                <tr>
+                    <td class="manualEntry">0111</td>
+                    <th class="manualEntry">Subtract (SUB)</th>
+                    <td class="manualEntry">Subtracts the value stored at the code address from the accumulator, decreasing its current value.</td>
+                </tr>
+                <tr>
+                    <td class="manualEntry">1000</td>
+                    <th class="manualEntry">Jump (JMP)</th>
+                    <td class="manualEntry">Sets the counter equal to the code address. That address will be read in the next Fetch phase.</td>
+                </tr>
+                <tr>
+                    <td class="manualEntry">1001</td>
+                    <th class="manualEntry">Jump if negative (JIN)</th>
+                    <td class="manualEntry">Jumps if the negative flag is 1. See Jump.</td>
+                </tr>
+                <tr>
+                    <td class="manualEntry">1010</td>
+                    <th class="manualEntry">Jump if zero (JIZ)</th>
+                    <td class="manualEntry">Jumps if the zero flag is 1. See Jump.</td>
+                </tr>
+                <tr>
+                    <td class="manualEntry">1011</td>
+                    <th class="manualEntry">Jump if overflow (JIO)</th>
+                    <td class="manualEntry">Jumps if the overflow flag is 1. See Jump.</td>
                 </tr>
             </table>
         </div>
